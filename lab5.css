@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+    background-color: rgb(244, 236, 225);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to_do_list {
+    width: 800px;
+    background-color: white;
+    border: 2px solid rgba(128, 128, 128, 0.543);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.439);
+}
+
+.to_do_list h2 {
+    user-select: none;
+    text-align: center;
+    font-size: 3.0rem;
+    margin-bottom: 20px;
+}
+
+.to_do_list .lists_task {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.to_do_list .input-box-name {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    border: 2px solid black;
+}
+
+.input-box-name input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 15px 0 10px;
+    font-size: 1.7rem;
+
+}
+
+.input-box-name input~label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 1.7rem;
+    pointer-events: none;
+    transition: .5s ease-in-out;
+    opacity: .5;
+}
+
+.input-box-name input:focus~label,
+.input-box-name input:valid~label {
+    top: -25px;
+    opacity: 1;
+
+}
+
+.to_do_list .input-box-description {
+    width: 100%;
+    border: 2px solid black;
+    margin: 40px 0 20px 0;
+    position: relative;
+    z-index: 1;
+
+}
+
+.input-box-description textarea {
+    width: 100%;
+    padding: 5px 5px 0 5px;
+    font-size: 1.7rem;
+    border: none;
+    outline: none;
+
+}
+
+.input-box-description textarea~label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 1.7rem;
+    pointer-events: none;
+    transition: .5s ease-in-out;
+    z-index: -1;
+    opacity: .5;
+}
+
+.input-box-description textarea:focus~label {
+    top: -25px;
+    opacity: 1;
+}
+
+.to_do_list .btn-add-control {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.to_do_list .btn_add {
+    width: 90px;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.to_do_list .show_to_do_lists {
+    margin-top: 20px;
+    border: 2px solid black;
+    padding: 0 15px 15px;
+    height: 250px;
+    overflow-y: auto;
+}
+
+.show_to_do_lists #show .show_div {
+    font-size: 1.7rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    animation: showLeft .5s ease-in-out;
+}
+
+.show_to_do_lists #show .div_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show_to_do_lists #show .div_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+@keyframes showLeft {
+    from {
+        transform: translate(-200px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+}
+
+.show_to_do_lists #show .show_deleted,
+.show_to_do_lists #show .show_edit {
+    width: 70px;
+    height: 35px;
+    background-color: transparent;
+    border: 2px solid rgb(241, 202, 147);
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color .18s ease-in-out;
+    font-weight: bold;
+    color: rgb(241, 202, 147);
+    margin: 10px 10px 0;
+}
+
+.show_to_do_lists #show .cancel,
+.show_to_do_lists #show .apply {
+    width: 70px;
+    height: 35px;
+    background-color: transparent;
+    border: 2px solid rgb(241, 202, 147);
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color .18s ease-in-out;
+    font-weight: bold;
+    color: rgb(241, 202, 147);
+    margin: 10px 10px 0;
+}
+
+.show_to_do_lists #show .cancel:hover,
+.show_to_do_lists #show .apply:hover {
+    background-color: rgb(241, 202, 147);
+    border: none;
+    color: rgb(245, 232, 208);
+}
+
+.show_to_do_lists #show .show_deleted:hover,
+.show_to_do_lists #show .show_edit:hover {
+    background-color: rgb(241, 202, 147);
+    border: none;
+    color: rgb(245, 232, 208);
+}
+
+.show_to_do_lists #show .control_input_bottom {
+    display: flex;
+    transform: scale(0);
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0px);
+    }
+}
+
+.show_to_do_lists #show .callback_input {
+    transform: scale(1);
+    animation: showUp .5s ease-in-out;
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+        transform: translate(0, 50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0px);
+    }
+}
+
+.show_to_do_lists #show .container_position1 {
+    position: relative;
+}
+
+.show_to_do_lists #show .container_position2 {
+    position: relative;
+    width: 250px;
+}
+
+.show_to_do_lists #show .input_tittle {
+
+    margin-right: 20px;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    padding: 0 5px 5px 2px;
+}
+
+.show_to_do_lists #show .input_tittle:focus~.label_tittle,
+.show_to_do_lists #show .input_tittle:valid~.label_tittle,
+.show_to_do_lists #show .input_description:focus~.label_description,
+.show_to_do_lists #show .input_description:valid~.label_description {
+    top: 25px;
+    opacity: 1;
+}
+
+.show_to_do_lists #show .input_description {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    padding: 0 5px 5px 2px;
+}
+
+.show_to_do_lists #show .label_tittle {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s ease-in-out;
+    opacity: .5;
+}
+
+.show_to_do_lists #show .label_description {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s ease-in-out;
+    opacity: .5;
+
+}
+.show_to_do_lists #show .move_top{
+    transform: translate(0,-50px);
+}
+.show_to_do_lists #show .move_bottom{
+    transform: translate(0,20px);
+}
+.show_to_do_lists #show .input_show--down{
+    animation: showDown .5s ease-in-out;
+}
+@keyframes showDown{
+    from{
+        opacity: 0;
+        transform: translate(0,0px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0,100px);
+    }
+}
