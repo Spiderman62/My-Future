@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 232, 232);
+}
+
+.wrapper {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    border: 2px solid rgba(128, 128, 128, 0.606);
+    box-shadow: 0 0 15px gray;
+    border-radius: 4px;
+    overflow: hidden;
+
+}
+
+.wrapper #slide_show {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    
+    transition: .5s ease-in-out;
+
+}
+
+#slide_show .slide {
+    height: 100%;
+    width: 100%;
+    
+}
+
+.slide img {
+    width: 1000px;
+    height: 600px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.caption h2 {
+    font-size: 1.6rem;
+}
+
+.btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    color: rgb(112, 109, 109);
+    transition: .18s ease-in-out;
+}
+.btn-left:hover, 
+.btn-right:hover{
+    color: white;
+    cursor: pointer;
+}
+.btn-left {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 20px;
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    color: rgb(112, 109, 109);
+    transition: .18s ease-in-out;    
+}
+
+.hover_js{
+    transform: scale(1);
+    transition: .5s ease-in-out;
+}
+.hover_js:hover{
+    transform: scale(1.2);
+}
+.show_description{
+    position: absolute;
+    bottom:35px;
+    left: 50%;
+    transform: translate(-50%,0);
+    color: white;
+    font-size: 2.2rem;
+    width: max-content;
+    text-align: center;
+    opacity: 0;
+    padding: 10px;
+    display: inline-block;
+    border: 2px solid gray;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    user-select: none;
+    animation: showUp .75s ease-in-out forwards;
+    
+}
+@keyframes showUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 75px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+    }
+}
+.dot{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
+
+}
+.dot span{
+    background-color: rgb(51, 50, 50);
+    padding: 0 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
