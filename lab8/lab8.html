@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video controls</title>
+    <link rel="stylesheet" href="./lab8.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container_video">
+        <div class="wrapper_video">
+          <!-- control -->
+          <video id="video_justin_bieber" width="100%" height="100%" src="./video/video-0.mp4" ></video>
+        </div>
+        <ul class="buttons_video">
+          
+          <li id="loop" class="items_button"><i class="fa-solid fa-arrows-spin"></i></li>
+          <li id="stop" class="items_button"><i class="fa-solid fa-stop"></i></li>
+          <li id="mute" class="items_button"><i class="fa-solid fa-volume-xmark"></i></li>
+          <li class="items_button">
+            <div id="play_pause" class="change_button_play">
+              <i id="pause" class="fa-solid fa-pause"></i>
+              <i id="play" class="fa-solid fa-play"></i>
+            </div>
+          </li>
+          <li id="descrease_volume" class="items_button"><i class="fa-solid fa-volume-low"></i></li>
+          <li id="increase_volume" class="items_button"><i class="fa-solid fa-volume-high"></i></li>
+          
+        </ul>
+      </div>
+      <script src="./lab8.js"></script>
+</body>
+</html>
