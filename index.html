@@ -1,43 +1,1108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div id="main">
-        <div class="wrapper">
-            <div class="login-box login">
-                <form action="">
-                    <h2 class="title">Login</h2>
-                    <div class="form-login">
-                        <input id="linked" type="text" required>
-                        <label for="linked">User</label>
-                    </div>
-                    <div class="form-login">
-                        <input id="linkedPass" type="password" required>
-                        <label for="linkedPass">Password</label>
-                    </div>
-                    <div class="remember__forgot">
-                        <div class="remember--check-box">
-                            <input id="Remember" type="checkbox">
-                            <label for="Remember">Remember me</label>
-                        </div>
-                        <div class="forgot__password">
-                            <a href="">Forgot password ? </a>
-                        </div>
 
-                    </div>
-                    <button class="submit">Log in</button>
-                    <div class="register__account">
-                        <p>Don't have a account ?</p>
-                        <a href="">Register</a>
-                    </div>
-                </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym store</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div id="main">
+    <div class="thumnail"></div>
+    <div class="thumnail-responsive"></div>
+    <header>
+      <div class="grid">
+        <nav>
+          <ul class="download__connect">
+            <li class="download__link">
+
+              <a href="">Tải ứng dụng</a>
+              <div class="nav__header-qr">
+                <div class="header__qr">
+                  <img src="./imgs/QR_banking.png" alt="" class="qr__scan">
+                </div>
+                <div class="another__apps">
+                  <div class="app-store--scan">
+                    <img src="./imgs/brand apple logo.jpg" alt="">
+                  </div>
+                  <div class="google--scan">
+                    <img src="./imgs/Google-Play-Store.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="download__link">
+              Kết nối
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+            </li>
+            <li class="download__link">
+              <p style="background: linear-gradient(120deg,rgb(183, 236, 231),rgb(241, 241, 161));color: transparent;-webkit-background-clip: text;-webkit-text-fill-color: transparent;user-select: none;"
+                id="timer"></p>
+            </li>
+          </ul>
+          <ul class="notification__login">
+            <li class="login__link">
+              <a href="#">
+
+                <i class="fa-solid fa-globe"></i><span onclick="openMap()">Open map</span></a>
+              <span class="show-coords"></span>
+            </li>
+            <li style="position: relative;" class="login__link">
+              <i style="cursor: pointer;position: absolute;margin-top: 9px;margin-left: -4px;"
+                class="light_bulb fa-solid fa-lightbulb"></i>
+              <i style="cursor: pointer;position: absolute;margin-top: 9px;margin-left: -4px;"
+                class="dark_bulb fa-regular fa-lightbulb"></i>
+              <span style="position: absolute;bottom: -20px;left: -30px;font-weight: 700;user-select: none;"
+                class="message_bulb"></span>
+            </li>
+            <li class="login__link">
+              <a href="">
+                <i class="fa-regular fa-bell"></i>
+                Tiếng việt
+                <i class="fa-solid fa-chevron-up"></i>
+
+              </a>
+              <ul class="languages">
+                <a href="" style="display: block;">
+                  <li>Tiếng việt</li>
+                  <li>English</li>
+                </a>
+              </ul>
+            </li>
+            <li id="open_validate_js" class="login__link"><a style="cursor: pointer;">Đăng nhập</a></li>
+          </ul>
+        </nav>
+        <div class="navigation__bottom">
+          <div class="brand__shopee">
+
+            <h1 class="brand__shopee-logo">Gym Store</h1>
+          </div>
+          <div class="navigation__bottom--search">
+            <div class="navigation__bottom--search_input">
+              <input type="text" placeholder="FLASH SELL!!!">
+              <ul class="navigation__bottom--search-list">
+                <li class="navigation__bottom--search-item"><a href="" class="navigation__bottom--search-link">Dụng cụ
+                    tập gym đa năng</a></li>
+                <li class="navigation__bottom--search-item"><a href="" class="navigation__bottom--search-link">Xà đơn
+                    gắn tường</a></li>
+                <li class="navigation__bottom--search-item"><a href="" class="navigation__bottom--search-link">Quạt đa
+                    năng</a></li>
+                <li class="navigation__bottom--search-item"><a href="" class="navigation__bottom--search-link">Laptop
+                    acer</a></li>
+                <li class="navigation__bottom--search-item"><a href="" class="navigation__bottom--search-link">Dây
+                    nhảy</a></li>
+              </ul>
+            </div>
+
+            <div class="navigation__bottom--search-beside">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <div class="navigation__bottom--cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>15</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="header-resposive">
+      <div class="grid-responsive">
+        <div class="bars--control-responsive">
+          <div style="background: linear-gradient(120deg,rgb(183, 236, 231),rgb(241, 241, 161));color: transparent;-webkit-background-clip: text;-webkit-text-fill-color: transparent;user-select: none;" class="brand__shopee-logo-responsive">Gym Store</div>
+          <p style="background: linear-gradient(120deg,rgb(183, 236, 231),rgb(241, 241, 161));color: transparent;-webkit-background-clip: text;-webkit-text-fill-color: transparent;user-select: none;"
+            id="timer-responsive"></p>
+            <div style="position: relative;" class="login__link">
+              <i style="cursor: pointer;position: absolute;margin-top: -9px;margin-left: -4px;font-size: 1.8rem;"
+                class="light_bulb-responsive fa-solid fa-lightbulb"></i>
+              <i style="cursor: pointer;position: absolute;margin-top: -9px;margin-left: -4px;font-size: 1.8rem;"
+                class="dark_bulb-responsive fa-regular fa-lightbulb"></i>
+              <span style="position: absolute;bottom: -20px;left: -30px;font-weight: 700;user-select: none;"
+                class="message_bulb-responsive"></span>
+            </div>
+            <div class="bars-responsive">
+              <i style="background: linear-gradient(120deg,rgb(183, 236, 231),rgb(241, 241, 161));color: transparent;-webkit-background-clip: text;-webkit-text-fill-color: transparent;user-select: none;" class="bars-responsive-icon fa-solid fa-bars"></i>
             </div>
         </div>
+      </div>
+      <p style="font-size: 1.8rem;text-align: center;background: linear-gradient(120deg,rgb(183, 236, 231),rgb(241, 241, 161));color: transparent;-webkit-background-clip: text;-webkit-text-fill-color: transparent;user-select: none;" id="show-map--respnsove" href="#"></p>
     </div>
+    <div class="navigation-responsive">
+      <div class="text">Slide menu</div>
+        <ul>
+          <li>
+            <a id="show-wrapper-validate-responsive" href="#">Đăng nhập</a>
+          </li>
+          <li>
+            <a id="get-language" href="#">Ngôn ngữ
+              <i class="always-up fa-solid fa-caret-down"></i>
+            </a>
+            <ul class="active-language">
+              <li><a href="#">Tiếng việt</a></li>
+              <li><a href="#">English</a></li>
+            </ul>
+          </li>
+          <li><a onclick="openMaps()" href="#" >Get maps</a></li>
+          <li>
+            <a href="#">Thông báo</a>
+          </li>
+          <li><a id="closed-slide-bar" href="#">Close<i class="fa-solid fa-xmark"></i></a></li>
+        </ul>
+      
+    </div>
+    <div class="main__slideshow reveal">
+      <div class="wrapper">
+        <div id="slide">
+          <div class="item" style="background-image: url('./imgs/Dây_Kháng_lực.jpg');">
+            <div class="content">
+              <h1>Dây Kháng Lực Mini Band</h1>
+              <p>Dây Cao Su Kháng Lực Aolikes Tập Chân Mông Chính Hãng</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item" style="background-image: url('./imgs/dây_nhảy.jpg');">
+            <div class="content">
+              <h1>Dây Nhảy</h1>
+              <p>Dây Nhảy Thể Lực Tập Thể Dục Thể Thao Giảm Cân</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item" style="background-image: url('./imgs/Dụng_cụ_chống_đẩy_hít_đất.jpg');">
+            <div class="content">
+              <h1>PARALLETTES GỖ</h1>
+              <p>Dụng cụ chống đẩy, hít đất, chồng chuối</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item"
+            style="background-image: url('./imgs/Tạ7Kg_loại1_vỏ_dày_đã_nhồi_siêu_bền_đẹp_từ1kg-2kg.jpg');">
+            <div class="content">
+              <h1>Tạ tay</h1>
+              <p>Vỏ tạ nhựa bát giác từ 1kg - 12kg</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item"
+            style="background-image: url('./imgs/Xà_đơn_treo_tường_gắn_cửa\,_xà_đơn_gắn_tường_đa_năng\,_dụng_cụ_tập_cơ_bụng.jpg');">
+            <div class="content">
+              <h1>Xà Đơn Treo Tường Loại Xịn</h1>
+              <p>Xà Đơn Gắn Tường Tập Thể Dục Tại Nhà</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item" style="background-image: url('./imgs/Orgain_organic_made_in-USA.jpg');">
+            <div class="content">
+              <h1>Orgain organic</h1>
+              <p>Made in USA</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item" style="background-image: url('./imgs/bánh_protein_tăng_cơ.jpg');">
+            <div class="content">
+              <h1>Bánh protein tăng cơ</h1>
+              <p>Vị peanut & chocolate</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item" style="background-image: url('./imgs/Whey_protein_isolate.jpg');">
+            <div class="content">
+              <h1>SỮA WHEY ISOLATE PROTEIN</h1>
+              <p>mua 2 túi tặng bình lắc</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item" style="background-image: url('./imgs/xe_đạp_thể_thao_limit_racing_S200.jpg');">
+            <div class="content">
+              <h1>XE ĐẠP THỂ THAO LIMIT RACING S200</h1>
+              <p>TẶNG KÈM CHẮN BÙN VÀ GIÁ TREO BÌNH NƯỚC</p>
+              <button>See more</button>
+            </div>
+          </div>
+          <div class="item" style="background-image: url('./imgs/Giay_Nam_sneakers.jpg');">
+            <div class="content">
+              <h1>Giày nam sneakers thể thao</h1>
+              <p>Giày nam 2023 mới về</p>
+              <button>See more</button>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button style="border: none;" id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+          <button style="border: none;" id="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="selling__product reveal">
+      <div class="grid bg-color-product">
+        <div class="selling__product-see-more">
+          <div class="selling__product-see-more-below">
+            <h1 class="selling__product-see-more-countdown-title">SIÊU SALE BOM TẤN | MEGA SUPER SALE 11.11 | DEAL KÈM
+              DEAL</h1>
+            <marquee behavior="" direction="left">
+              <h1 class="selling__product-see-more-countdown-title-auto-move">Giá tốt nhất trên thị trường ~ Ưu đãi đặc
+                biệt:Kèm quà tặng cực khủng ~ Giảm giá shock ~ Giá tốt nhất thị trường</h1>
+            </marquee>
+          </div>
+          <div class="selling__product-see-more-countdown">
+            <h1 style="color: white;font-size: 1.8rem;margin-top: 15px;">Kết thúc sau</h1>
+            <div>
+              <p id="days">00</p>
+              <span>Days</span>
+            </div>
+            <div>
+              <p id="hours">00</p>
+              <span>Hours</span>
+            </div>
+            <div>
+              <p id="minutes">00</p>
+              <span>Minutes</span>
+            </div>
+            <div>
+              <p id="seconds">00</p>
+              <span>Seconds</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid__row-20 ">
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div style="background-image: url('./imgs/bánh_protein_tăng_cơ.jpg');"
+                    class="selling__product-item-pic">
+                  </div>
+                </div>
+
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">Bánh protein tăng cơ - Vị peanut and chocolate</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">29.000 - 59.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 1,7k</span>
+                  </div>
+                  <p class="selling__product--adress">Hà nội</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+
+                  <div style="background-image: url('./imgs/Dây_Kháng_lực.jpg');" class="selling__product-item-pic">
+                  </div>
+                </div>
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">Dây Cao Su Kháng Lực Aolikes Tập Chân Mông Chính Hãng</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">5.000 - 129.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 537k</span>
+                  </div>
+                  <p class="selling__product--adress">Nước ngoài</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div style="background-image: url('./imgs/dây_nhảy.jpg');" class="selling__product-item-pic">
+                  </div>
+
+                </div>
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">Dây Nhảy Thể Lực Tập Thể Dục Thể Thao Giảm Cân</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">15.000 - 55.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 222,7k</span>
+                  </div>
+                  <p class="selling__product--adress">Hà nội</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div style="background-image: url('./imgs/Dụng_cụ_chống_đẩy_hít_đất.jpg');"
+                    class="selling__product-item-pic">
+                  </div>
+
+                </div>
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">Dụng cụ chống đẩy, hít đất, chồng chuối</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">55.000 - 105.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 457k</span>
+                  </div>
+                  <p class="selling__product--adress">Hà nội</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div style="background-image: url('./imgs/Giay_Nam_sneakers.jpg');" class="selling__product-item-pic">
+                  </div>
+
+                </div>
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">Giày nam sneakers thể thao</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">75.000 - 125.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 11,8k</span>
+                  </div>
+                  <p class="selling__product--adress">Hà nội</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div style="background-image: url('./imgs/Orgain_organic_made_in-USA.jpg');"
+                    class="selling__product-item-pic">
+                  </div>
+
+                </div>
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">Orgain organic - Made in USA</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">690.000 - 990.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 6,1k</span>
+                  </div>
+                  <p class="selling__product--adress">TP. Hồ Chí Minh</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div style="background-image: url('./imgs/Tạ7Kg_loại1_vỏ_dày_đã_nhồi_siêu_bền_đẹp_từ1kg-2kg.jpg');"
+                    class="selling__product-item-pic">
+                  </div>
+                </div>
+
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">Tạ tay - Vỏ tạ nhựa bát giác từ 1kg - 12kg</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">29.000 - 135.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 8,2k</span>
+                  </div>
+                  <p class="selling__product--adress">Hà nội</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div style="background-image: url('./imgs/Whey_protein_isolate.jpg');"
+                    class="selling__product-item-pic">
+                  </div>
+                </div>
+
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">SỮA WHEY ISOLATE PROTEIN - mua 2 túi tặng bình lắc</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">174.000 - 175.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 4,5k</span>
+                  </div>
+                  <p class="selling__product--adress">Hà nội</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div
+                    style="background-image: url('./imgs/Xà_đơn_treo_tường_gắn_cửa\,_xà_đơn_gắn_tường_đa_năng\,_dụng_cụ_tập_cơ_bụng.jpg');"
+                    class="selling__product-item-pic">
+                  </div>
+                </div>
+
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">Xà Đơn Gắn Tường Tập Thể Dục Tại Nhà</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">89.000 - 249.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 1,8k</span>
+                  </div>
+                  <p class="selling__product--adress">Hà nội</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="grid__column-2-2">
+            <div class="selling__product-item">
+              <a href="">
+                <div class="cancel-hide">
+                  <div style="background-image: url('./imgs/xe_đạp_thể_thao_limit_racing_S200.jpg');"
+                    class="selling__product-item-pic">
+                  </div>
+                </div>
+
+                <div class="selling__product-item-content">
+                  <h1 class="selling__product-item--title">XE ĐẠP THỂ THAO LIMIT RACING S200</h1>
+                  <div class="selling__product-flash-sale">
+                    <p class="selling__product-flash-sale--show">Flash Sale</p>
+                  </div>
+                  <p class="selling__product-price">2.220.000 - 2.590.000k</p>
+                  <div class="selling__product-feedback-sold">
+                    <span class="selling__product-feedback">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="selling__product-sold">Đã bán 153k</span>
+                  </div>
+                  <p class="selling__product--adress">Hà nội</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="content-black-friday reveal">
+        <div class="grid">
+          <a href="#">
+            <img class="black-friday"
+              src="//bizweb.dktcdn.net/100/011/344/themes/857119/assets/section_hot_banner.png?1700725919541" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="video reveal">
+        <div class="grid">
+          <div class="container_video">
+            <div class="wrapper_video">
+              <!-- control -->
+              <video id="video_justin_bieber" width="100%" height="100%" src="./video/video-0.mp4"></video>
+            </div>
+            <ul class="buttons_video">
+              <li id="back_video" class="items_button"><i class="fa-solid fa-backward"></i></li>
+              <li id="loop" class="items_button"><i class="fa-solid fa-arrows-spin"></i></li>
+              <li id="stop" class="items_button"><i class="fa-solid fa-stop"></i></li>
+              <li id="mute" class="items_button"><i class="fa-solid fa-volume-xmark"></i></li>
+              <li class="items_button">
+                <div id="play_pause" class="change_button_play">
+                  <i id="pause" class="fa-solid fa-pause"></i>
+                  <i id="play" class="fa-solid fa-play"></i>
+                </div>
+              </li>
+              <li id="descrease_volume" class="items_button"><i class="fa-solid fa-volume-low"></i></li>
+              <li id="increase_volume" class="items_button"><i class="fa-solid fa-volume-high"></i></li>
+              <li id="next_video" class="items_button"><i class="fa-solid fa-forward"></i></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="content-nutrifood reveal">
+        <div class="grid">
+          <div class="grid__row-20">
+            <div class="grid__column-half">
+              <div class="provide_vegetable">
+                <h2>THỰC PHẨM BỔ SUNG</h2>
+                <div class="content_provide_vegetable">
+                  <div class="lists-img">
+                    <img src="./imgs/pre-workout-nao-tot-gymstore-thumbnail.webp" alt="">
+                  </div>
+                  <div class="content-product">
+                    <p><strong>Top 10 Pre Workout chắc chắn sẽ không làm bạn thất vọng</strong></p>
+                    <p>Thứ Ba, 21/11/2023</p>
+                    <p>Pre Workout là thực phẩm bổ sung được nhiều người ưa chuộng bởi khả năng thúc đẩy sức mạnh, sức
+                      bền của cơ bắp, giúp...</p>
+                  </div>
+                </div>
+                <div class="content_provide_vegetable">
+                  <div class="lists-img">
+                    <img src="./imgs/2023-09-28-10-10-18-rpd3pbknlb.webp" alt="">
+                  </div>
+                  <div class="content-product">
+                    <p><strong>
+                        CÙNG GYMSTORE VUI TẾT TRUNG THU - RINH NGÀN ƯU ĐÃI</strong></p>
+                    <p>Thứ Năm, 28/09/2023</p>
+                    <p> Đón mừng một mùa Trung Thu nữa lại về, để mùa Trăng Rằm Tháng 8 năm nay của mọi người thêm phần
+                      trọn vẹn, Gymstore...</p>
+                  </div>
+                </div>
+                <div class="content_provide_vegetable">
+                  <div style="margin-right: 40px;" class="lists-img">
+                    <img src="./imgs/uong-may-vien-omega-3-moi-ngay.webp" alt="">
+                  </div>
+                  <div class="content-product">
+                    <p><strong>
+                        Uống mấy viên Omega 3 mỗi ngày là đủ?</strong></p>
+                    <p>Chủ Nhật, 03/09/2023</p>
+                    <p>Omega 3 là axit béo có nhiều lợi ích tốt cho sức khỏe nên thường được lựa chọn để bổ sung hàng
+                      ngày. Vậy uống...</p>
+                  </div>
+                </div>
+                <div class="content_provide_vegetable">
+                  <div class="lists-img">
+                    <img src="./imgs/omega-3-va-omega-3-6-9-loai-nao-tot-hon.webp" alt="">
+                  </div>
+                  <div class="content-product">
+                    <p><strong>
+                        CÙNG GYMSTORE VUI TẾT TRUNG THU - RINH NGÀN ƯU ĐÃI</strong></p>
+                    <p>Thứ Năm, 28/09/2023</p>
+                    <p> Đón mừng một mùa Trung Thu nữa lại về, để mùa Trăng Rằm Tháng 8 năm nay của mọi người thêm phần
+                      trọn vẹn, Gymstore...</p>
+                  </div>
+                </div>
+                <button class="show-all">Xem tất cả</button>
+              </div>
+            </div>
+            <div class="grid__column-half">
+              <div class="provide_vegetable">
+                <h2>DINH DƯỠNG</h2>
+                <div class="content_provide_vegetable">
+                  <div class="lists-img">
+                    <img src="./imgs/thuc-pham-tot-cho-nao-bo-1-thumbnail.webp" alt="">
+                  </div>
+                  <div class="content-product">
+                    <p><strong>Ăn gì bổ não? Gợi ý 17 thực phẩm tốt nhất cho não bộ</strong></p>
+                    <p>Thứ Ba, 11/07/2023</p>
+                    <p>Não bộ là một trong những bộ phận quan trọng nhất và cũng sử dụng nhiều năng lượng nhất trong cơ
+                      thể chúng ta. Những...</p>
+                  </div>
+                </div>
+                <div class="content_provide_vegetable">
+                  <div class="lists-img">
+                    <img src="./imgs/tinh-bot-cham.webp" alt="">
+                  </div>
+                  <div class="content-product">
+                    <p><strong>
+                        Tinh bột chậm là gì? Có gì khác với tinh bột nhanh?</strong></p>
+                    <p>Thứ Sáu, 23/06/2023</p>
+                    <p>Tinh bột chậm là gì? Tinh bột chậm có gì khác tinh bột nhanh mà được đánh giá là tốt hơn? Những
+                      thực phẩm nào giàu...</p>
+                  </div>
+                </div>
+                <div class="content_provide_vegetable">
+                  <div style="margin-right: 40px;" class="lists-img">
+                    <img src="./imgs/dau-oliu-co-tac-dung-gi.webp" alt="">
+                  </div>
+                  <div class="content-product">
+                    <p><strong>
+                        Dầu oliu có tác dụng gì? 11 lợi ích tuyệt vời của dầu oliu với sức khỏe</strong></p>
+                    <p>Thứ Sáu, 23/06/2023</p>
+                    <p>Không chỉ nổi tiếng với công dụng làm đẹp cho da, móng, tóc, dầu oliu còn là một thực phẩm lành
+                      mạnh cực kỳ tốt...</p>
+                  </div>
+                </div>
+                <div class="content_provide_vegetable">
+                  <div class="lists-img">
+                    <img src="./imgs/thuc-pham-nen-an-khi-nhin-an-gian-doan.webp" alt="">
+                  </div>
+                  <div class="content-product">
+                    <p><strong>
+                        Top 9 thực phẩm nên ăn khi nhịn ăn gián đoạn</strong></p>
+                    <p>Thứ Sáu, 23/06/2023</p>
+                    <p>Nhịn ăn gián đoạn là một trong những chế độ ăn kiêng được quan tâm nhất hiện nay. Nếu bạn đang
+                      muốn cải thiện sức...</p>
+                  </div>
+                </div>
+                <button class="show-all">Xem tất cả</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="background-scroll--number reveal">
+        <div class="scroll-number">
+          <div class="wrapper-scroll--numbers">
+            <div class="box">
+              <i class="fa-solid fa-user"></i>
+              <div data-azt="500" class="box-data">0</div>
+              <h2>Khách hàng</h2>
+            </div>
+            <div class="box">
+              <i class="fa-solid fa-house"></i>
+              <div data-azt="11" class="box-data">0</div>
+              <h2>Cơ sở toàn quốc</h2>
+            </div>
+            <div class="box">
+              <i class="fa-solid fa-check"></i>
+              <div data-azt="1285" class="box-data">0</div>
+              <h2>Độ đánh giá tin cậy</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_main reveal">
+        <div class="grid">
+          <div class="gym-store--system">
+            <h2>Hệ thống cửa hàng gym store</h2>
+            <div style="margin-top: 45px;" class="grid__row-2-5">
+              <div class="grid__column-23">
+                <div class="introduce-tittle">
+                  <span>1</span>
+                  <span>gymstore xã đàn</span>
+                </div>
+                <div class="introduce-content">
+                  <p style="font-weight: bold;"><span><i class="fa-solid fa-location-dot"></i></span>398 Xã Đàn, Quận
+                    Đống Đa, Hà Nội</p>
+                  <p><span><i class="fa-solid fa-phone"></i></span>Hotline: 0886 39 88 39</p>
+                  <p><span><svg viewBox="0 0 51.413 51.413" width="13px" height="13px" class="i_fix">
+                        <path
+                          d="M25.989,12.274c8.663,0.085,14.09-0.454,14.823,9.148h10.564c0-14.875-12.973-16.88-25.662-16.88    c-12.69,0-25.662,2.005-25.662,16.88h10.482C11.345,11.637,17.398,12.19,25.989,12.274z">
+                        </path>
+                        <path
+                          d="M5.291,26.204c2.573,0,4.714,0.154,5.19-2.377c0.064-0.344,0.101-0.734,0.101-1.185H10.46H0    C0,26.407,2.369,26.204,5.291,26.204z">
+                        </path>
+                        <path
+                          d="M40.88,22.642h-0.099c0,0.454,0.039,0.845,0.112,1.185c0.502,2.334,2.64,2.189,5.204,2.189    c2.936,0,5.316,0.193,5.316-3.374H40.88z">
+                        </path>
+                        <path
+                          d="M35.719,20.078v-1.496c0-0.669-0.771-0.711-1.723-0.711h-1.555c-0.951,0-1.722,0.042-1.722,0.711    v1.289v1h-11v-1v-1.289c0-0.669-0.771-0.711-1.722-0.711h-1.556c-0.951,0-1.722,0.042-1.722,0.711v1.496v1.306    C12.213,23.988,4.013,35.073,3.715,36.415l0.004,8.955c0,0.827,0.673,1.5,1.5,1.5h40c0.827,0,1.5-0.673,1.5-1.5v-9    c-0.295-1.303-8.493-12.383-11-14.987V20.078z M19.177,37.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,37.62,19.177,37.62z M19.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,32.62,19.177,32.62z M19.177,27.621c-0.805,0-1.458-0.652-1.458-1.458    c0-0.805,0.653-1.458,1.458-1.458s1.458,0.653,1.458,1.458C20.635,26.969,19.982,27.621,19.177,27.621z M25.177,37.62    c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458S25.983,37.62,25.177,37.62z     M25.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458    S25.983,32.62,25.177,32.62z M25.177,27.621c-0.805,0-1.458-0.652-1.458-1.458c0-0.805,0.653-1.458,1.458-1.458    c0.806,0,1.458,0.653,1.458,1.458C26.635,26.969,25.983,27.621,25.177,27.621z M31.177,37.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,37.62,31.177,37.62z M31.177,32.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,32.62,31.177,32.62z M31.177,27.621c-0.806,0-1.458-0.652-1.458-1.458    c0-0.805,0.652-1.458,1.458-1.458s1.458,0.653,1.458,1.458C32.635,26.969,31.983,27.621,31.177,27.621z">
+                        </path>
+                      </svg></span>Tổng đài: 1800.2067</p>
+                  <p><span><i class="fa-regular fa-envelope"></i></span>service@gymstore.vn</p>
+                  <p><span><i class="fa-regular fa-clock"></i></span>8:00h - 22:00h</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-image"></i></span>Hình
+                    ảnh thực tế showroom</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-map"></i></span>Bản đồ
+                    đường đi</p>
+
+                </div>
+              </div>
+              <div class="grid__column-23">
+                <div class="introduce-tittle">
+                  <span>2</span>
+                  <span>GYMSTORE CẦU GIẤY</span>
+                </div>
+                <div class="introduce-content">
+                  <p style="font-weight: bold;"><span><i class="fa-solid fa-location-dot"></i></span>299 Trần Đăng Ninh,
+                    Quận Cầu Giấy, Hà Nội</p>
+                  <p><span><i class="fa-solid fa-phone"></i></span>Hotline: 0886 39 88 39</p>
+                  <p><span><svg viewBox="0 0 51.413 51.413" width="13px" height="13px" class="i_fix">
+                        <path
+                          d="M25.989,12.274c8.663,0.085,14.09-0.454,14.823,9.148h10.564c0-14.875-12.973-16.88-25.662-16.88    c-12.69,0-25.662,2.005-25.662,16.88h10.482C11.345,11.637,17.398,12.19,25.989,12.274z">
+                        </path>
+                        <path
+                          d="M5.291,26.204c2.573,0,4.714,0.154,5.19-2.377c0.064-0.344,0.101-0.734,0.101-1.185H10.46H0    C0,26.407,2.369,26.204,5.291,26.204z">
+                        </path>
+                        <path
+                          d="M40.88,22.642h-0.099c0,0.454,0.039,0.845,0.112,1.185c0.502,2.334,2.64,2.189,5.204,2.189    c2.936,0,5.316,0.193,5.316-3.374H40.88z">
+                        </path>
+                        <path
+                          d="M35.719,20.078v-1.496c0-0.669-0.771-0.711-1.723-0.711h-1.555c-0.951,0-1.722,0.042-1.722,0.711    v1.289v1h-11v-1v-1.289c0-0.669-0.771-0.711-1.722-0.711h-1.556c-0.951,0-1.722,0.042-1.722,0.711v1.496v1.306    C12.213,23.988,4.013,35.073,3.715,36.415l0.004,8.955c0,0.827,0.673,1.5,1.5,1.5h40c0.827,0,1.5-0.673,1.5-1.5v-9    c-0.295-1.303-8.493-12.383-11-14.987V20.078z M19.177,37.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,37.62,19.177,37.62z M19.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,32.62,19.177,32.62z M19.177,27.621c-0.805,0-1.458-0.652-1.458-1.458    c0-0.805,0.653-1.458,1.458-1.458s1.458,0.653,1.458,1.458C20.635,26.969,19.982,27.621,19.177,27.621z M25.177,37.62    c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458S25.983,37.62,25.177,37.62z     M25.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458    S25.983,32.62,25.177,32.62z M25.177,27.621c-0.805,0-1.458-0.652-1.458-1.458c0-0.805,0.653-1.458,1.458-1.458    c0.806,0,1.458,0.653,1.458,1.458C26.635,26.969,25.983,27.621,25.177,27.621z M31.177,37.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,37.62,31.177,37.62z M31.177,32.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,32.62,31.177,32.62z M31.177,27.621c-0.806,0-1.458-0.652-1.458-1.458    c0-0.805,0.652-1.458,1.458-1.458s1.458,0.653,1.458,1.458C32.635,26.969,31.983,27.621,31.177,27.621z">
+                        </path>
+                      </svg></span>Tổng đài: 1800.2067</p>
+                  <p><span><i class="fa-regular fa-envelope"></i></span>service@gymstore.vn</p>
+                  <p><span><i class="fa-regular fa-clock"></i></span>8:00h - 22:00h</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-image"></i></span>Hình
+                    ảnh thực tế showroom</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-map"></i></span>Bản đồ
+                    đường đi</p>
+
+                </div>
+              </div>
+              <div class="grid__column-23">
+                <div class="introduce-tittle">
+                  <span>3</span>
+                  <span>GYMSTORE QUẬN 5</span>
+                </div>
+                <div class="introduce-content">
+                  <p style="font-weight: bold;"><span><i class="fa-solid fa-location-dot"></i></span> 286 Trần Phú,
+                    Phường 8, Quận 5, TP. Hồ Chí Minh</p>
+                  <p><span><i class="fa-solid fa-phone"></i></span>Hotline: 0933 55 66 28</p>
+                  <p><span><svg viewBox="0 0 51.413 51.413" width="13px" height="13px" class="i_fix">
+                        <path
+                          d="M25.989,12.274c8.663,0.085,14.09-0.454,14.823,9.148h10.564c0-14.875-12.973-16.88-25.662-16.88    c-12.69,0-25.662,2.005-25.662,16.88h10.482C11.345,11.637,17.398,12.19,25.989,12.274z">
+                        </path>
+                        <path
+                          d="M5.291,26.204c2.573,0,4.714,0.154,5.19-2.377c0.064-0.344,0.101-0.734,0.101-1.185H10.46H0    C0,26.407,2.369,26.204,5.291,26.204z">
+                        </path>
+                        <path
+                          d="M40.88,22.642h-0.099c0,0.454,0.039,0.845,0.112,1.185c0.502,2.334,2.64,2.189,5.204,2.189    c2.936,0,5.316,0.193,5.316-3.374H40.88z">
+                        </path>
+                        <path
+                          d="M35.719,20.078v-1.496c0-0.669-0.771-0.711-1.723-0.711h-1.555c-0.951,0-1.722,0.042-1.722,0.711    v1.289v1h-11v-1v-1.289c0-0.669-0.771-0.711-1.722-0.711h-1.556c-0.951,0-1.722,0.042-1.722,0.711v1.496v1.306    C12.213,23.988,4.013,35.073,3.715,36.415l0.004,8.955c0,0.827,0.673,1.5,1.5,1.5h40c0.827,0,1.5-0.673,1.5-1.5v-9    c-0.295-1.303-8.493-12.383-11-14.987V20.078z M19.177,37.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,37.62,19.177,37.62z M19.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,32.62,19.177,32.62z M19.177,27.621c-0.805,0-1.458-0.652-1.458-1.458    c0-0.805,0.653-1.458,1.458-1.458s1.458,0.653,1.458,1.458C20.635,26.969,19.982,27.621,19.177,27.621z M25.177,37.62    c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458S25.983,37.62,25.177,37.62z     M25.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458    S25.983,32.62,25.177,32.62z M25.177,27.621c-0.805,0-1.458-0.652-1.458-1.458c0-0.805,0.653-1.458,1.458-1.458    c0.806,0,1.458,0.653,1.458,1.458C26.635,26.969,25.983,27.621,25.177,27.621z M31.177,37.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,37.62,31.177,37.62z M31.177,32.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,32.62,31.177,32.62z M31.177,27.621c-0.806,0-1.458-0.652-1.458-1.458    c0-0.805,0.652-1.458,1.458-1.458s1.458,0.653,1.458,1.458C32.635,26.969,31.983,27.621,31.177,27.621z">
+                        </path>
+                      </svg></span>Tổng đài: 1800.2067</p>
+                  <p><span><i class="fa-regular fa-envelope"></i></span>service@gymstore.vn</p>
+                  <p><span><i class="fa-regular fa-clock"></i></span>8:00h - 22:00h</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-image"></i></span>Hình
+                    ảnh thực tế showroom</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-map"></i></span>Bản đồ
+                    đường đi</p>
+
+                </div>
+              </div>
+              <div class="grid__column-23">
+                <div class="introduce-tittle">
+                  <span>4</span>
+                  <span>GYMSTORE BÌNH THẠNH</span>
+                </div>
+                <div class="introduce-content">
+                  <p style="font-weight: bold;"><span><i class="fa-solid fa-location-dot"></i></span>388 Điện Biên
+                    Phủ, P.17, Q. Bình Thạnh, TP. Hồ Chí Minh</p>
+                  <p><span><i class="fa-solid fa-phone"></i></span>Hotline: 0933 55 66 28</p>
+                  <p><span><svg viewBox="0 0 51.413 51.413" width="13px" height="13px" class="i_fix">
+                        <path
+                          d="M25.989,12.274c8.663,0.085,14.09-0.454,14.823,9.148h10.564c0-14.875-12.973-16.88-25.662-16.88    c-12.69,0-25.662,2.005-25.662,16.88h10.482C11.345,11.637,17.398,12.19,25.989,12.274z">
+                        </path>
+                        <path
+                          d="M5.291,26.204c2.573,0,4.714,0.154,5.19-2.377c0.064-0.344,0.101-0.734,0.101-1.185H10.46H0    C0,26.407,2.369,26.204,5.291,26.204z">
+                        </path>
+                        <path
+                          d="M40.88,22.642h-0.099c0,0.454,0.039,0.845,0.112,1.185c0.502,2.334,2.64,2.189,5.204,2.189    c2.936,0,5.316,0.193,5.316-3.374H40.88z">
+                        </path>
+                        <path
+                          d="M35.719,20.078v-1.496c0-0.669-0.771-0.711-1.723-0.711h-1.555c-0.951,0-1.722,0.042-1.722,0.711    v1.289v1h-11v-1v-1.289c0-0.669-0.771-0.711-1.722-0.711h-1.556c-0.951,0-1.722,0.042-1.722,0.711v1.496v1.306    C12.213,23.988,4.013,35.073,3.715,36.415l0.004,8.955c0,0.827,0.673,1.5,1.5,1.5h40c0.827,0,1.5-0.673,1.5-1.5v-9    c-0.295-1.303-8.493-12.383-11-14.987V20.078z M19.177,37.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,37.62,19.177,37.62z M19.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,32.62,19.177,32.62z M19.177,27.621c-0.805,0-1.458-0.652-1.458-1.458    c0-0.805,0.653-1.458,1.458-1.458s1.458,0.653,1.458,1.458C20.635,26.969,19.982,27.621,19.177,27.621z M25.177,37.62    c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458S25.983,37.62,25.177,37.62z     M25.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458    S25.983,32.62,25.177,32.62z M25.177,27.621c-0.805,0-1.458-0.652-1.458-1.458c0-0.805,0.653-1.458,1.458-1.458    c0.806,0,1.458,0.653,1.458,1.458C26.635,26.969,25.983,27.621,25.177,27.621z M31.177,37.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,37.62,31.177,37.62z M31.177,32.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,32.62,31.177,32.62z M31.177,27.621c-0.806,0-1.458-0.652-1.458-1.458    c0-0.805,0.652-1.458,1.458-1.458s1.458,0.653,1.458,1.458C32.635,26.969,31.983,27.621,31.177,27.621z">
+                        </path>
+                      </svg></span>Tổng đài: 1800.2067</p>
+                  <p><span><i class="fa-regular fa-envelope"></i></span>service@gymstore.vn</p>
+                  <p><span><i class="fa-regular fa-clock"></i></span>8:00h - 22:00h</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-image"></i></span>Hình
+                    ảnh thực tế showroom</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-map"></i></span>Bản đồ
+                    đường đi</p>
+
+                </div>
+              </div>
+              <div class="grid__column-23">
+                <div class="introduce-tittle">
+                  <span>5</span>
+                  <span>GYMSTORE TÂN PHÚ</span>
+                </div>
+                <div class="introduce-content">
+                  <p style="font-weight: bold;"><span><i class="fa-solid fa-location-dot"></i></span> 678 Lũy Bán Bích,
+                    P. Tân Thành, Q. Tân Phú, TP. Hồ Chí Minh</p>
+                  <p><span><i class="fa-solid fa-phone"></i></span>Hotline: 0911 55 66 28</p>
+                  <p><span><svg viewBox="0 0 51.413 51.413" width="13px" height="13px" class="i_fix">
+                        <path
+                          d="M25.989,12.274c8.663,0.085,14.09-0.454,14.823,9.148h10.564c0-14.875-12.973-16.88-25.662-16.88    c-12.69,0-25.662,2.005-25.662,16.88h10.482C11.345,11.637,17.398,12.19,25.989,12.274z">
+                        </path>
+                        <path
+                          d="M5.291,26.204c2.573,0,4.714,0.154,5.19-2.377c0.064-0.344,0.101-0.734,0.101-1.185H10.46H0    C0,26.407,2.369,26.204,5.291,26.204z">
+                        </path>
+                        <path
+                          d="M40.88,22.642h-0.099c0,0.454,0.039,0.845,0.112,1.185c0.502,2.334,2.64,2.189,5.204,2.189    c2.936,0,5.316,0.193,5.316-3.374H40.88z">
+                        </path>
+                        <path
+                          d="M35.719,20.078v-1.496c0-0.669-0.771-0.711-1.723-0.711h-1.555c-0.951,0-1.722,0.042-1.722,0.711    v1.289v1h-11v-1v-1.289c0-0.669-0.771-0.711-1.722-0.711h-1.556c-0.951,0-1.722,0.042-1.722,0.711v1.496v1.306    C12.213,23.988,4.013,35.073,3.715,36.415l0.004,8.955c0,0.827,0.673,1.5,1.5,1.5h40c0.827,0,1.5-0.673,1.5-1.5v-9    c-0.295-1.303-8.493-12.383-11-14.987V20.078z M19.177,37.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,37.62,19.177,37.62z M19.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,32.62,19.177,32.62z M19.177,27.621c-0.805,0-1.458-0.652-1.458-1.458    c0-0.805,0.653-1.458,1.458-1.458s1.458,0.653,1.458,1.458C20.635,26.969,19.982,27.621,19.177,27.621z M25.177,37.62    c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458S25.983,37.62,25.177,37.62z     M25.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458    S25.983,32.62,25.177,32.62z M25.177,27.621c-0.805,0-1.458-0.652-1.458-1.458c0-0.805,0.653-1.458,1.458-1.458    c0.806,0,1.458,0.653,1.458,1.458C26.635,26.969,25.983,27.621,25.177,27.621z M31.177,37.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,37.62,31.177,37.62z M31.177,32.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,32.62,31.177,32.62z M31.177,27.621c-0.806,0-1.458-0.652-1.458-1.458    c0-0.805,0.652-1.458,1.458-1.458s1.458,0.653,1.458,1.458C32.635,26.969,31.983,27.621,31.177,27.621z">
+                        </path>
+                      </svg></span>Tổng đài: 1800.2067</p>
+                  <p><span><i class="fa-regular fa-envelope"></i></span>service@gymstore.vn</p>
+                  <p><span><i class="fa-regular fa-clock"></i></span>8:00h - 22:00h</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-image"></i></span>Hình
+                    ảnh thực tế showroom</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-map"></i></span>Bản đồ
+                    đường đi</p>
+
+                </div>
+              </div>
+              <div class="grid__column-23">
+                <div class="introduce-tittle">
+                  <span>6</span>
+                  <span>GYMSTORE MINH KHAI</span>
+                </div>
+                <div class="introduce-content">
+                  <p style="font-weight: bold;"><span><i class="fa-solid fa-location-dot"></i></span>276 Minh Khai, P.
+                    Minh Khai, Quận Hai Bà Trưng, Hà Nội</p>
+                  <p><span><i class="fa-solid fa-phone"></i></span>Hotline: 0826 39 88 39</p>
+                  <p><span><svg viewBox="0 0 51.413 51.413" width="13px" height="13px" class="i_fix">
+                        <path
+                          d="M25.989,12.274c8.663,0.085,14.09-0.454,14.823,9.148h10.564c0-14.875-12.973-16.88-25.662-16.88    c-12.69,0-25.662,2.005-25.662,16.88h10.482C11.345,11.637,17.398,12.19,25.989,12.274z">
+                        </path>
+                        <path
+                          d="M5.291,26.204c2.573,0,4.714,0.154,5.19-2.377c0.064-0.344,0.101-0.734,0.101-1.185H10.46H0    C0,26.407,2.369,26.204,5.291,26.204z">
+                        </path>
+                        <path
+                          d="M40.88,22.642h-0.099c0,0.454,0.039,0.845,0.112,1.185c0.502,2.334,2.64,2.189,5.204,2.189    c2.936,0,5.316,0.193,5.316-3.374H40.88z">
+                        </path>
+                        <path
+                          d="M35.719,20.078v-1.496c0-0.669-0.771-0.711-1.723-0.711h-1.555c-0.951,0-1.722,0.042-1.722,0.711    v1.289v1h-11v-1v-1.289c0-0.669-0.771-0.711-1.722-0.711h-1.556c-0.951,0-1.722,0.042-1.722,0.711v1.496v1.306    C12.213,23.988,4.013,35.073,3.715,36.415l0.004,8.955c0,0.827,0.673,1.5,1.5,1.5h40c0.827,0,1.5-0.673,1.5-1.5v-9    c-0.295-1.303-8.493-12.383-11-14.987V20.078z M19.177,37.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,37.62,19.177,37.62z M19.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458    s1.458,0.652,1.458,1.458S19.982,32.62,19.177,32.62z M19.177,27.621c-0.805,0-1.458-0.652-1.458-1.458    c0-0.805,0.653-1.458,1.458-1.458s1.458,0.653,1.458,1.458C20.635,26.969,19.982,27.621,19.177,27.621z M25.177,37.62    c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458S25.983,37.62,25.177,37.62z     M25.177,32.62c-0.805,0-1.458-0.652-1.458-1.458s0.653-1.458,1.458-1.458c0.806,0,1.458,0.652,1.458,1.458    S25.983,32.62,25.177,32.62z M25.177,27.621c-0.805,0-1.458-0.652-1.458-1.458c0-0.805,0.653-1.458,1.458-1.458    c0.806,0,1.458,0.653,1.458,1.458C26.635,26.969,25.983,27.621,25.177,27.621z M31.177,37.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,37.62,31.177,37.62z M31.177,32.62c-0.806,0-1.458-0.652-1.458-1.458    s0.652-1.458,1.458-1.458s1.458,0.652,1.458,1.458S31.983,32.62,31.177,32.62z M31.177,27.621c-0.806,0-1.458-0.652-1.458-1.458    c0-0.805,0.652-1.458,1.458-1.458s1.458,0.653,1.458,1.458C32.635,26.969,31.983,27.621,31.177,27.621z">
+                        </path>
+                      </svg></span>Tổng đài: 1800.2067</p>
+                  <p><span><i class="fa-regular fa-envelope"></i></span>service@gymstore.vn</p>
+                  <p><span><i class="fa-regular fa-clock"></i></span>8:00h - 22:00h</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-image"></i></span>Hình
+                    ảnh thực tế showroom</p>
+                  <p style="color: rgb(215, 0, 24);cursor: pointer;"><span><i class="fa-solid fa-map"></i></span>Bản đồ
+                    đường đi</p>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="footer_description reveal">
+          <div class="grid">
+            <div class="footer_description-top">
+              <div class="grid__row">
+                <div class="grid__column-23">
+                  <h2>GIỚI THIỆU GYMSTORE</h2>
+                  <p><a href="">Giới thiệu công ty</a></p>
+                  <p><a href="">Hệ thống cửa hàng</a></p>
+                  <p><a href="">Thương hiệu nổi bật</a></p>
+                  <p><a href="">Thông tin tuyển dụng</a></p>
+                  <p><a href="">Liên hệ</a></p>
+                </div>
+                <div class="grid__column-23">
+                  <h2>HỖ TRỢ KHÁCH HÀNG</h2>
+                  <p><a href="">Hướng dẫn thanh toán</a></p>
+                  <p><a href="">Hướng dẫn mua hàng Online</a></p>
+                  <p><a href="">Chính sách khách hàng</a></p>
+                  <p><a href="">Hướng dẫn mua hàng trả góp</a></p>
+                  <p><a href="">Góp ý, Khiếu Nại</a></p>
+                </div>
+                <div class="grid__column-23">
+                  <h2>CHÍNH SÁCH CHUNG</h2>
+                  <p><a href="">Chính sách, quy định chung</a></p>
+                  <p><a href="">Chính sách đổi trả và hoàn tiền</a></p>
+                  <p><a href="">Chính sách vận chuyển hàng</a></p>
+                  <p><a href="">Bảo mật thông tin khách hàng</a></p>
+                  <p><a href="">Chính sách hàng chính hãng</a></p>
+                  <p><a href="">Chương trình Affiliate</a></p>
+                </div>
+                <div class="grid__column-23">
+                  <h2>SẢN PHẨM NỔI BẬT</h2>
+                  <p><a href="">Sản phẩm mới</a></p>
+                  <p><a href="">Whey Protein</a></p>
+                  <p><a href="">Sữa Tăng Cân</a></p>
+                  <p><a href="">BCAA</a></p>
+                  <p><a href="">Creatine</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer_description-bottom">
+            <div class="grid">
+              <div style="display: flex;align-items: center;justify-content: space-between;" class="grid__row-2-5">
+                <div class="grid__column-70">
+                  <p>© Bản quyền thuộc về GYMSTORE</p>
+                  <p>Những sản phẩm đăng trên website này không phải là thuốc, không có tác dụng thay thế thuốc chữa
+                    bệnh.
+                    Hình ảnh và Nutrition Facts của sản phẩm chỉ mang tính chất tham khảo bởi thành phần, mẫu mã nhà sản
+                    xuất có thể thay đổi bất cứ lúc nào mà Gymstore chưa thể cập nhật ngay lập tức.</p>
+                </div>
+                <div class="grid__column-30">
+                  <div class="footer_description-bottom-control--img">
+                    <a href=""><img style="height: 80px;"
+                        src="//bizweb.dktcdn.net/100/011/344/themes/857119/assets/dtb.png?1700725919541" alt=""></a>
+                    <a href=""><img
+                        src="https://images.dmca.com/Badges/dmca_protected_25_120.png?ID=798ffd2b-9af4-4da8-b0b9-996ad07994bd"
+                        alt=""></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main_validate">
+    <div class="wrapper_validate">
+      <i class="cancel-hide fa-solid fa-xmark"></i>
+      <div class="login-validate">
+        <h2>Login</h2>
+        <form id="form-login" action="">
+          <div class="input-form">
+            <i class="fa-solid fa-user"></i>
+            <input id="login-username" type="text">
+            <small style="font-size: 1.6rem;"></small>
+            <span></span>
+            <label for="user">Username</label>
+          </div>
+          <div class="input-form">
+            <i class="fa-solid fa-lock"></i>
+            <input id="login-password" type="password">
+            <small style="font-size: 1.6rem;"></small>
+            <span></span>
+            <label for="login-password">Password</label>
+          </div>
+          <div class="input-form">
+            <i class="fa-solid fa-envelope"></i>
+            <input id="login--email" type="email">
+            <small style="font-size: 1.6rem;"></small>
+            <span></span>
+            <label for="login--email">Email</label>
+          </div>
+          <div class="accept-forgot">
+            <div class="accept-terms">
+              <input id="accept-term" type="checkbox">
+              <label for="accept-term">Remember me</label>
+            </div>
+            <p><a href="#">Forgot the Password?</a></p>
+          </div>
+          <input class="submit-form" type="submit" value="Login">
+          <div class="no-account">
+            <p>Don't have an account?</p>
+            <a id="convert_register" style="cursor: pointer;">Click here</a>
+          </div>
+        </form>
+      </div>
+      <!-- Register -->
+      <div class="register-validate">
+        <h2>Register</h2>
+        <form id="form-register" action="">
+          <div class="input-form">
+            <i class="fa-solid fa-user"></i>
+            <input id="register-username" type="text">
+            <small style="font-size: 1.6rem;"></small>
+            <span></span>
+            <label for="register-username">Username</label>
+          </div>
+          <div class="input-form">
+            <i class="fa-solid fa-envelope"></i>
+            <input id="register-email" type="email">
+            <small style="font-size: 1.6rem;"></small>
+            <span></span>
+            <label for="register-email">Email</label>
+          </div>
+          <div class="input-form">
+            <i class="fa-solid fa-phone"></i>
+            <input id="register-phone" type="text">
+            <small style="font-size: 1.6rem;"></small>
+            <span></span>
+            <label for="register-phone">Phone</label>
+          </div>
+          <div class="input-form">
+            <i class="fa-solid fa-lock"></i>
+            <input id="register-password" type="password">
+            <small style="font-size: 1.6rem;"></small>
+            <span></span>
+            <label for="register-password">Password</label>
+          </div>
+          <div class="input-form">
+            <i class="fa-solid fa-lock"></i>
+            <input id="register-confirm-password" type="password">
+            <small style="font-size: 1.6rem;"></small>
+            <span></span>
+            <label for="register-confirm--password">Confirm password</label>
+          </div>
+          <div class="accept-forgot">
+            <div class="accept-terms">
+              <input id="register_accept-term" type="checkbox">
+              <label for="register_accept-term">I accept the Terms and Services</label>
+            </div>
+          </div>
+          <input class="submit-form" type="submit" value="Register">
+          <div class="no-account">
+            <p>Already have an account ?</p>
+            <a id="convert_login" style="cursor: pointer;">Click here</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
 </body>
+
 </html>
