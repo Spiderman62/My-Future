@@ -1,0 +1,195 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: sans-serif;
+	font-size: 62.5%;
+	/* cursor: url('./imgs/meme_mouse\ 2.png'),auto; */
+}
+
+#app {
+	background-color: #556c91;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	background-color: #1F2839;
+	width: 800px;
+	padding: 50px 100px;
+	border-radius: 5px;
+}
+
+.toDoList {
+	color: #9DA0A9;
+	display: flex;
+	justify-content: space-between;
+	font-size: 2.2rem;
+	width: 600px;
+}
+
+.toDoList-left {
+	display: flex;
+	gap: 12px;
+}
+
+.toDoList-right {
+	display: flex;
+	gap: 12px;
+}
+
+.input-box {
+	display: flex;
+
+}
+
+.input-box input {
+	flex: 1;
+	border: none;
+	outline: none;
+	padding: 0 15px 0 7px;
+	background-color: transparent;
+	border-bottom: 3px solid #0F172A;
+	color: white;
+	font-size: 1.8rem;
+}
+
+.input-box button {
+	width: 100px;
+	height: 40px;
+	margin-left: 20px;
+	background-color: #0F172A;
+	border: none;
+	outline: none;
+	color: #9DA0A9;
+	border-radius: 7px;
+	font-size: 1.8rem;
+}
+
+.content-to_do_list--limit {
+	margin-top: 30px;
+}
+
+.content-to_do_list {
+	list-style: none;
+}
+
+
+.wrapper_li {
+	padding: 0 12px 0 16px;
+	width: 100%;
+	background-color: #0F172A;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 2.2rem;
+	border-top-right-radius: 9px;
+	border-bottom-right-radius: 9px;
+	transition: .3s ease-in-out;
+	border-left: 4px solid #EE473F;
+	margin-bottom: 18px;
+	transition: .3s ease-in-out;
+}
+
+.content-to_do_list li.done {
+	font-style: italic;
+	text-decoration: line-through;
+	background-color: rgb(223, 219, 219);
+	border-left: unset;
+	transition: .3s ease-in-out;
+	border-radius: 8px;
+}
+
+.content-to_do_list li.done .content-to_do_list--icons {
+	/* transform: scale(0); */
+}
+
+.content-to_do_list p {
+	color: #9DA0A9;
+	font-size: 2.0rem;
+}
+
+.content-to_do_list span {
+	margin-right: 4px;
+	text-transform: lowercase;
+}
+
+.content-to_do_list--icons i:first-child {
+	color: #EE454B;
+}
+
+.content-to_do_list--icons i:last-child {
+	color: #1BC958;
+}
+
+.content-to_do_list--limit {
+	height: 260px;
+	overflow-y: auto;
+}
+
+.content-to_do_list--limit::-webkit-scrollbar {
+	display: none;
+}
+
+.replace_edit {
+	margin-top: 30px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .3s ease-in-out;
+	margin-bottom: 15px;
+	transition: .3s ease-in-out;
+	display: none;
+}
+.replace_edit.showEdit{
+	transition: .3s ease-in-out;
+	animation: showDown .5s ease-out;
+	display: block;
+}
+@keyframes showDown{
+	0%{
+		transform: translate(0,-130px);
+		opacity: 0;
+	}
+	100%{
+		transform: translate(0,0px);
+		opacity: 1;
+	}
+}
+.replace_edit .input-box {
+	width: 100%;
+}
+.replace_edit .input-box input {
+	padding: 0 35px 8px 15px;
+	font-size: 1.6rem;
+}
+.replace_edit .input-box label {
+	position: absolute;
+	font-size: 1.8rem;
+	color: #9DA0A9;
+	top: 0;
+	pointer-events: none;
+	transition: .3s ease-in-out;
+}
+.replace_edit .input-box input:focus~label, 
+.replace_edit .input-box input:valid~label{
+	top: -20px;
+}
+.submitDataReplace{
+	width: 100px;
+	height: 40px;
+	margin-left: 20px;
+	background-color: #0F172A;
+	border: none;
+	outline: none;
+	color: #9DA0A9;
+	border-radius: 7px;
+	font-size: 1.8rem;
+}
